@@ -42,9 +42,8 @@ int Node::increase_level(int value) {
 	return this->level;
 };
 
-int Node::set_level(int level) {
+void Node::set_level(int level) {
 	this->level = level;
-	return level;
 };
 
 vector <Node> Node::add_child(Node node) {

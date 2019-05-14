@@ -20,25 +20,14 @@ public:
 
 	string get(string attribute);
 
-	vector <Node> get_children() {
-		return this->children;
-	};
-
-	vector <Node> get_parents() {
-		return this->parents;
-	};
-
-	vector <Node> get_ancestors() {
-		return this->ancestors;
-	};
-
+	vector <Node> get_children() {return this->children;};
+	vector <Node> get_parents() {return this->parents;};
+	vector <Node> get_ancestors() {return this->ancestors;};
 
 	int increase_level(int increment);
-
-	int set_level(int level);
+	void set_level(int level);
 
 	vector <Node> add_child(Node node);
-	
 	vector <Node> add_parent(Node node);
 
 	vector <Node> remove_child(Node node);
