@@ -43,17 +43,34 @@ Path::Path(vector <Node> nodes, double weight) {
 
 Node Path::get_opposite(Node node) {
 	const string node_name = node.get("name");
-	if (this->nodes_array[0].get("name") == node_name)
-		return this->nodes_array[1];
-	else
-		return this->nodes_array[0];
+
+	Node first_node = this->nodes_array[0];
+	Node second_node = this->nodes_array[1];
+
+	const string first_name = first_node.get("name");
+	const string second_name = second_node.get("name");
+
+	if (first_name == node_name)
+		return second_node;
+	else if (second_name == node_name)
+		return first_node;
+	else 
+		throw("Error, node not found in the path");
 };
 
 Node Path::get_opposite(string name) {
-	if (this->nodes_array[0].get("name") == name)
-		return this->nodes_array[1];
+	Node first_node = this->nodes_array[0];
+	Node second_node = this->nodes_array[1];
+
+	const string first_name = first_node.get("name");
+	const string second_name = second_node.get("name");
+
+	if (first_name == name)
+		return second_node;
+	else if (second_name == name)
+		return first_node;
 	else
-		return this->nodes_array[0];
+		throw("Error, node not found in the path");
 };
 
 pair <Node, Node> Path::get_nodes() {
